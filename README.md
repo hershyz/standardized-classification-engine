@@ -1,4 +1,4 @@
-<h1>hershyz/standardized-classification-engine</h1>
+<img src="https://raw.githubusercontent.com/hershyz/standardized-classification-engine/main/images/logo.png" width=600px>
 
 <p>
   <strong>Overview:</strong><br>
