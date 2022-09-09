@@ -3,7 +3,7 @@
 <p>
   <strong>Overview:</strong><br>
   Lightweight, standardized classification engine for general machine learning tasks.<br>
-  (GSMST SCE Maker Project)
+  (GSMST Senior Capstone Maker Project)
 </p>
 
 <p>
