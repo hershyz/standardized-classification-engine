@@ -1,0 +1,7 @@
+https://www.kaggle.com/datasets/fedesoriano/heart-failure-prediction
+https://www.kaggle.com/datasets/fedesoriano/stroke-prediction-dataset
+https://www.kaggle.com/datasets/loveall/cervical-cancer-risk-classification
+https://www.kaggle.com/datasets/andrewmvd/early-diabetes-classification
+https://www.kaggle.com/datasets/prathamtripathi/drug-classification
+https://www.kaggle.com/datasets/deepcontractor/smoke-detection-dataset
+https://www.kaggle.com/datasets/adityakadiwal/water-potability
