@@ -1,4 +1,4 @@
-<h1>hershyz/standardized-ml-classifier</h1>
+<h1>hershyz/standardized-classification-engine</h1>
 
 <p>
   <strong>Overview:</strong><br>
