@@ -1,3 +1,7 @@
+# init timer
+import time
+start = time.perf_counter()
+
 # other library imports
 import numpy as np
 import pandas as pd
@@ -43,3 +47,6 @@ model.fit(X_train, y_train)
 predictions = model.predict(X_test)
 acc = accuracy_score(y_test, predictions)
 print('accuracy: ' + str(acc))
+
+elapsed = time.perf_counter() - start
+print('time elapsed: ' + str(elapsed) + ' s')
