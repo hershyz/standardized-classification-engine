@@ -30,15 +30,15 @@ for i in range(len(X[0])):
     X[:, i] = Le.fit_transform(X[:, i])
 
 # label mapping Y
-label_mapping = {
-    'DrugY': 1,
-    'drugC': 2,
-    'drugX': 3,
-    'drugB': 4,
-    'drugA': 5
-}
-y['Drug'] = y['Drug'].map(label_mapping)
-y = np.array(y)
+# label_mapping = {
+#     'DrugY': 1,
+#     'drugC': 2,
+#     'drugX': 3,
+#     'drugB': 4,
+#     'drugA': 5
+# }
+# y['Drug'] = y['Drug'].map(label_mapping)
+# y = np.array(y)
 
 # create model
 knn = neighbors.KNeighborsClassifier(n_neighbors=10, weights='uniform')
