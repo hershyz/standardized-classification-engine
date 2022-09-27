@@ -1,5 +1,3 @@
-import dataframe
-
 # get the feature map for conversion (arguments: dataframe):
 def int_map(df):
     n = 0
@@ -29,14 +27,3 @@ def convert_dataframe(df, map):
         df_converted.append(converted_point)
 
     return df_converted
-
-
-
-
-# test:
-# df = dataframe.get_dataframe('data/drug200.csv')
-# map = int_map(df)
-# converted_df = convert_dataframe(df, map)
-# print(map)
-# for point in converted_df:
-#     print(point)
