@@ -1,3 +1,6 @@
+import time
+start = time.perf_counter()
+
 import pandas as pd
 import numpy as np
 
@@ -61,4 +64,6 @@ def drug_model(preprocessing_head, inputs):
 
 drug_model = drug_model(drug_preprocessing, inputs)
 drug_model.fit(x=drug_features_dict, y=drug_labels, epochs=10)
-print(drug_model.summary())
+
+elapsed = time.perf_counter() - start
+print('time elapsed: ' + str(elapsed) + ' s')
