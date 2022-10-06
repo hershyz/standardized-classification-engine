@@ -1,4 +1,6 @@
-<img src="https://raw.githubusercontent.com/hershyz/standardized-classification-engine/main/images/logo.png" width=600px>
+<p align="center">
+  <img src="https://raw.githubusercontent.com/hershyz/standardized-classification-engine/main/images/logo.png" width=600px>
+</p>
 
 <p>
   <strong>Overview:</strong><br>
