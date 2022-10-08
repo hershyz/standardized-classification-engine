@@ -1,13 +1,18 @@
+from hashlib import algorithms_available
+
+
 class Model:
 
     # constructor:
-    def __init__(self, mean_map, int_map, df_sampled):
+    def __init__(self, mean_map, int_map, df_sampled, algorithm):
         self.mean_map = mean_map
         self.int_map = int_map
         self.df_sampled = df_sampled
+        self.algorithm = algorithm
     
     # display:
     def display(self):
+        print('classification method: ' + self.algorithm)
         print('numerical conversions:')
         print(self.int_map)
         print('---')

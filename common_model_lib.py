@@ -38,3 +38,39 @@ def mean_map(df):
         map[cat] = arr
     
     return map
+
+
+# caches the model as a file (given the best classification algorithm):
+def cache(model, name):
+
+    # create file and specify classificaiton algorithm:
+    f = open(name+'.mlmodel', 'w')
+    f.write('algorithm: ' + model.algorithm + '\n')
+
+    # write mean map data:
+    f.write('mean_map:\n')
+    mean_map = model.mean_map
+    for cat in mean_map:
+        data = cat + ','
+        means = mean_map[cat]
+        for i in range(0, len(means)):
+            data += str(means[i])
+            if i != len(means) - 1:
+                data += ','
+        f.write(data + '\n')
+    
+    # write int map conversion data:
+    f.write('int_map:\n')
+    int_map = model.int_map
+    for data in int_map:
+        f.write(data + ',' + str(int_map[data]) + '\n')
+    
+    # write df sampled data:
+    f.write('df_sampled:\n')
+    df_sampled = model.df_sampled
+    for i in range(0, len(df_sampled)):
+        point = str(df_sampled[i])
+        point = str.replace(point, '[', '')
+        point = str.replace(point, ']', '')
+        point = str.replace(point, '\'', '')
+        f.write(point + '\n')
