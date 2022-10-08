@@ -15,7 +15,7 @@
   Finally, this system removes the overhead of large inferencing frameworks, making for faster classifications and model training times without the need for GPU acceleration.
 </p>
 
-<h4>Dependencies for Tests (Python)</h4>
+<h4>Dependencies for Tests (pip)</h4>
 <pre>
 numpy
 pandas
