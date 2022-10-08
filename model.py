@@ -1,6 +1,3 @@
-from hashlib import algorithms_available
-
-
 class Model:
 
     # constructor:
