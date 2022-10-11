@@ -6,6 +6,7 @@ import data_sampler
 import model
 import sqrt_distance_classifier
 import abs_distance_classifier
+import percent_distance_classifier
 
 # main brute force algorithm for different classification techniques:
 def get_model(dataset):
@@ -33,3 +34,9 @@ def get_model(dataset):
     for point in df:
         abs_distance_classifier_predictions.append(abs_distance_classifier.classify(point, mean_map))
     print('abs distance classifier accuracy: ' + str(common_model_lib.eval(actual, abs_distance_classifier_predictions)))
+
+    # test percent distance classifier:
+    percent_distance_classifier_predictions = []
+    for point in df:
+        percent_distance_classifier_predictions.append(percent_distance_classifier.classify(point, mean_map))
+    print('percent distance classifier accuracy: ' + str(common_model_lib.eval(actual, percent_distance_classifier_predictions)))
