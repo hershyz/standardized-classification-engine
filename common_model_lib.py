@@ -1,3 +1,6 @@
+from copy import deepcopy
+
+
 # return a map of means of position arguments per unique category
 def mean_map(df):
     
@@ -24,7 +27,7 @@ def mean_map(df):
     # sum values in the map
     for point in df:
         curr_cat = point[len(point) - 1]
-        arr = map[curr_cat]
+        arr = deepcopy(map[curr_cat])
         for i in range(0, len(point) - 1):
             arr[i] += float(point[i])
         map[curr_cat] = arr
@@ -32,7 +35,7 @@ def mean_map(df):
 
     # divide by frequencies of unique categories to find averages
     for cat in map:
-        arr = map[cat]
+        arr = deepcopy(map[cat])
         for i in range(0, len(arr)):
             arr[i] /= cat_freqs[cat]
         map[cat] = arr
@@ -74,3 +77,12 @@ def cache(model, name):
         point = str.replace(point, ']', '')
         point = str.replace(point, '\'', '')
         f.write(point + '\n')
+    
+
+# evaluate accuracy:
+def eval(actual, predicted):
+    total = 0
+    for i in range(len(actual)):
+        if actual[i] == predicted[i]:
+            total += 1
+    return total / len(actual)
