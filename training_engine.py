@@ -7,6 +7,7 @@ import model
 import sqrt_distance_classifier
 import abs_distance_classifier
 import percent_distance_classifier
+import knn
 
 # main brute force algorithm for different classification techniques:
 def get_model(dataset):
@@ -40,3 +41,9 @@ def get_model(dataset):
     for point in df:
         percent_distance_classifier_predictions.append(percent_distance_classifier.classify(point, mean_map))
     print('percent distance classifier accuracy: ' + str(common_model_lib.eval(actual, percent_distance_classifier_predictions)))
+
+    # test knn:
+    knn_predictions = []
+    for point in df:
+        knn_predictions.append(knn.classify(point, sampled_data))
+    print('knn accuracy: ' + str(common_model_lib.eval(actual, knn_predictions)))
