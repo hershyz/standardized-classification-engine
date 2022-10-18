@@ -14,7 +14,7 @@ def classify(point, df):
     distances = sorted(distances, key=lambda x : x[0])
 
     freqs = {}
-    for i in range(0, 3): # k = 3
+    for i in range(0, 5): # k = 5
         if distances[i][1] in freqs:
             freqs[distances[i][1]] += 1
         else:
