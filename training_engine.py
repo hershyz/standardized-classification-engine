@@ -3,7 +3,7 @@ import dataframe
 import numerical_feature_converter
 import common_model_lib
 import data_sampler
-import model
+import model # needed later for caching
 import sqrt_distance_classifier
 import abs_distance_classifier
 import percent_distance_classifier
@@ -17,6 +17,7 @@ def get_model(dataset):
     int_map = numerical_feature_converter.int_map(df_raw)
     df = numerical_feature_converter.convert_dataframe(df_raw, int_map)
     mean_map = common_model_lib.mean_map(df)
+    stddev_map = common_model_lib.stddev_map(df)
     sampled_data = data_sampler.sampled_dataframe(df, 1) # use 100% ratio (1) for testing purposes, downscale later when we want smaller models
 
     # get actual outputs:

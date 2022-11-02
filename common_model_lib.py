@@ -43,6 +43,32 @@ def mean_map(df):
     return map
 
 
+# return a map of standard deviations per feature
+def stddev_map(df):
+
+    mean_map = {}
+    map = {}
+
+    # iterate features
+    for feature in range(0, len(df[0]) - 1):
+        curr_total = 0
+        # iterate down the rows
+        for row in range(0, len(df)):
+            curr_total += float(df[row][feature])
+        mean_map[feature] = curr_total / len(df)
+    
+    # iterate features
+    for feature in range(0, len(df[0]) - 1):
+        total_diff = 0
+        # iterate down the rows
+        for row in range(0, len(df)):
+            diff = abs(float(df[row][feature]) - mean_map[feature])
+            total_diff += diff
+        map[feature] = total_diff / len(df)
+    
+    return map
+
+
 # caches the model as a file (given the best classification algorithm):
 def cache(model, name):
 
