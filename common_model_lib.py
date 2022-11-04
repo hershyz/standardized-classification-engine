@@ -94,6 +94,12 @@ def cache(model, name):
     for data in int_map:
         f.write(data + ',' + str(int_map[data]) + '\n')
     
+    # write std dev map data:
+    f.write('stddev_map:\n')
+    stddev_map = model.stddev_map
+    for feature in stddev_map:
+        f.write(str(feature) + ',' + str(stddev_map[feature]) + '\n')
+    
     # write df sampled data:
     f.write('df_sampled:\n')
     df_sampled = model.df_sampled

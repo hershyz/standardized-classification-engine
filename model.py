@@ -1,9 +1,10 @@
 class Model:
 
     # constructor:
-    def __init__(self, mean_map, int_map, df_sampled, algorithm):
+    def __init__(self, mean_map, int_map, stddev_map, df_sampled, algorithm):
         self.mean_map = mean_map
         self.int_map = int_map
+        self.stddev_map = stddev_map
         self.df_sampled = df_sampled
         self.algorithm = algorithm
     
@@ -15,6 +16,8 @@ class Model:
         print('---')
         print('mean map:')
         print(self.mean_map)
+        print('std dev map:')
+        print(self.stddev_map)
         print('---')
         print('sampled cached data:')
         print(self.df_sampled)
