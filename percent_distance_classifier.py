@@ -8,7 +8,12 @@ def classify(point, mean_map):
         mean_point = mean_map[cat]
         cat_dist = 0
         for i in range(len(mean_point)):
-            cat_dist += abs((float(mean_point[i]) - float(point[i])) / float(mean_point[i]))
+            if float(mean_point[i]) == float(point[i]):
+                cat_dist += 0
+            elif float(mean_point[i]) == 0:
+                cat_dist += abs(float(mean_point[i]) - float(point[i])) / float(point[i])
+            else:
+                cat_dist += abs((float(mean_point[i]) - float(point[i])) / float(mean_point[i]))
         dists[cat] = math.sqrt(cat_dist)
 
     min = 10000000000
