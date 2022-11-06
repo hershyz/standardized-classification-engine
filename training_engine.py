@@ -3,7 +3,7 @@ import dataframe
 import numerical_feature_converter
 import common_model_lib
 import data_sampler
-import model # needed later for caching
+import model
 import sqrt_distance_classifier
 import abs_distance_classifier
 import percent_distance_classifier
@@ -48,3 +48,20 @@ def get_model(dataset):
     for point in df:
         knn_predictions.append(knn.classify(point, sampled_data))
     print('knn accuracy: ' + str(common_model_lib.eval(actual, knn_predictions)))
+
+    '''
+    -----------
+    standard deviation inverse weighted algorithms:
+    '''
+
+    # test sqrt distnace classifier (std dev):
+    sqrt_distance_classifier_std_predictions = []
+    for point in df:
+        sqrt_distance_classifier_std_predictions.append(sqrt_distance_classifier.classify_std(point, stddev_map, mean_map))
+    print('sqrt distance classifier (std dev inverse weighted) accuracy: ' + str(common_model_lib.eval(actual, sqrt_distance_classifier_std_predictions)))
+
+    # test abs distance classifier (std dev):
+    abs_distance_classifier_std_predictions = []
+    for point in df:
+        abs_distance_classifier_std_predictions.append(abs_distance_classifier.classify_std(point, stddev_map, mean_map))
+    print('abs distance classifier (std dev inverse weighted) accuracy: ' + str(common_model_lib.eval(actual, abs_distance_classifier_std_predictions)))
