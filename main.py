@@ -1,3 +1,3 @@
 import training_engine
 
-training_engine.get_model('data/diabetes_data.csv')
+training_engine.get_model('data/heart.csv')

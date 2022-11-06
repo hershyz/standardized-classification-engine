@@ -25,13 +25,11 @@ def classify_std(point, stddev_map, mean_map):
 
     dists = {}
 
-    index = 0
     for cat in mean_map:
         mean_point = mean_map[cat]
         cat_dist = 0
         for i in range(len(mean_point)):
-            cat_dist += abs((float(mean_point[i]) - float(point[i])) ** 2) * (1 / stddev_map[index])
-        index += 1
+            cat_dist += abs((float(mean_point[i]) - float(point[i])) ** 2) * (1 / stddev_map[i])
         dists[cat] = math.sqrt(cat_dist)
     
     min = 10000000000
