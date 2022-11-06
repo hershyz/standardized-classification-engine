@@ -1,0 +1,4 @@
+https://www.kaggle.com/datasets/uciml/glass
+https://www.kaggle.com/datasets/hb20007/gender-classification
+https://www.kaggle.com/datasets/brsdincer/star-type-classification
+https://www.kaggle.com/datasets/andrewmvd/fetal-health-classification
