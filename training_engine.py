@@ -10,10 +10,15 @@ import abs_distance_classifier
 import percent_distance_classifier
 import stddev_classifier
 import knn
+import time
 
 
 # main brute force algorithm for different classification techniques:
 def get_model(dataset):
+
+
+    # init performance timer
+    start = time.perf_counter()
 
 
     # get a converted dataframe and sampled data:
@@ -29,6 +34,8 @@ def get_model(dataset):
     actual = []
     for point in df:
         actual.append(point[len(point) - 1])
+
+    print('')
 
     # test sqrt distance classifier:
     sqrt_distance_classifier_predictions = []
@@ -71,7 +78,7 @@ def get_model(dataset):
     acc_map['sqrt_distance_classifier'] = sqrt_distance_accuracy
     acc_map['abs_distance_classifier'] = abs_distance_accuracy
     acc_map['percent_distance_classifier'] = percent_distance_accuracy
-    acc_map['stddev_classifier_accuracy'] = stddev_distance_accuracy
+    acc_map['stddev_distance_classifier'] = stddev_distance_accuracy
     acc_map['knn'] = knn_accuracy
 
     max = 0
@@ -81,4 +88,12 @@ def get_model(dataset):
             max = acc_map[algo]
             max_algo = algo
     
-    print('max accuracy: ' + max_algo + ' (' + str(acc_map[max_algo]) + ')')
+    elapsed = time.perf_counter() - start
+    print('---')
+    print('training complete: ' + str(elapsed) + 's elapsed')
+    print('max training accuracy: ' + max_algo + ' (' + str(acc_map[max_algo]) + ')')
+
+
+    # return model:
+    m = model.Model(mean_map, int_map, stddev_map, sampled_data, max_algo)
+    return m
