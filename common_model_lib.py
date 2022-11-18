@@ -170,7 +170,8 @@ def parse_model(path):
         point_arr.append(raw_arr[len(raw_arr) - 1])
         df_sampled.append(point_arr)
     
-    # TODO: return model
+    parsed_model = model.Model(mean_map, int_map, stddev_map, df_sampled, algorithm)
+    return parsed_model
 
 # evaluate accuracy:
 def eval(actual, predicted):
