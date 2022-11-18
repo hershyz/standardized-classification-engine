@@ -1,4 +1,5 @@
 from copy import deepcopy
+import model
 
 
 # return a map of means of position arguments per unique category
@@ -110,6 +111,66 @@ def cache(model, name):
         point = str.replace(point, '\'', '')
         f.write(point + '\n')
     
+
+# parse model:
+def parse_model(path):
+
+    f = open(path)
+    raw = f.readlines()
+    lines = []
+    for line in raw:
+        line = line.replace('\n', '')
+        lines.append(line)
+
+    # get algorithm:
+    algorithm = lines[0].split(': ')[1]
+    
+    # get mean map:
+    mean_map = {}
+    index = 2
+    while lines[index] != 'int_map:':
+        raw_arr = lines[index].split(',')
+        key = raw_arr[0]
+        point_arr = []
+        for i in range(1, len(raw_arr)):
+            point_arr.append(float(raw_arr[i]))
+        mean_map[key] = point_arr
+        index += 1
+    
+    # get int map:
+    int_map = {}
+    index += 1
+    while lines[index] != 'stddev_map:':
+        raw_arr = lines[index].split(',')
+        key = raw_arr[0]
+        num = float(raw_arr[1])
+        int_map[key] = num
+        index += 1
+    
+    # get stddev map:
+    stddev_map = {}
+    index += 1
+    while lines[index] != 'df_sampled:':
+        raw_arr = lines[index].split(',')
+        key = float(raw_arr[0])
+        num = float(raw_arr[1])
+        stddev_map[key] = num
+        index += 1
+    
+    # get sampled df:
+    df_sampled = []
+    index += 1
+    for i in range(index, len(lines)):
+        if len(lines[i]) == 0:
+            break
+        raw_arr = lines[i].split(',')
+        point_arr = []
+        for j in range(0, len(raw_arr) - 1):
+            point_arr.append(float(raw_arr[j]))
+        point_arr.append(raw_arr[len(raw_arr) - 1])
+        df_sampled.append(point_arr)
+    
+    # TODO: return model
 
 # evaluate accuracy:
 def eval(actual, predicted):
