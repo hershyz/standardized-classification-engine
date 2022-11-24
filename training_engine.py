@@ -64,7 +64,7 @@ def get_model(dataset):
         steddev_classifier_predictions.append(stddev_classifier.classify(point, stddev_map, mean_map))
     stddev_distance_accuracy = common_model_lib.eval(actual, steddev_classifier_predictions)
     print('stddev classifier accuracy: ' + str(stddev_distance_accuracy))
-
+    
     # test knn:
     knn_predictions = []
     for point in df:

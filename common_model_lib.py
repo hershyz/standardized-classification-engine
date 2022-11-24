@@ -1,4 +1,6 @@
 from copy import deepcopy
+import data_sampler
+import prediction_engine
 import model
 
 
@@ -173,6 +175,7 @@ def parse_model(path):
     parsed_model = model.Model(mean_map, int_map, stddev_map, df_sampled, algorithm)
     return parsed_model
 
+
 # evaluate accuracy:
 def eval(actual, predicted):
     total = 0
@@ -180,3 +183,15 @@ def eval(actual, predicted):
         if actual[i] == predicted[i]:
             total += 1
     return total / len(actual)
+
+
+# evaluate model:
+def test_model(model, df_converted):
+    df_sampled = data_sampler.sampled_dataframe(df_converted, 0.2)
+    correct = 0
+    for point in df_sampled:
+        actual = point[len(point) - 1]
+        predicted = prediction_engine.predict(point, model)
+        if str(predicted) == str(actual):
+            correct += 1
+    return correct / len(df_sampled)
