@@ -43,10 +43,10 @@ knn (k-nearest neighbors) classifier
 </pre>
 
 <h4>Train and Cache Model</h4>
-```
+<pre>
 import training_engine
 import common_model_lib
 
 model = training_engine.get_model('data/drug200.csv')
 common_model_lib.cache(model, 'drug200')
-```
+</pre>
