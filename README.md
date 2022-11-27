@@ -23,3 +23,12 @@ sklearn
 tensorflow
 keras
 </pre>
+
+<h4>Standardized Classification Algorithms</h4>
+<pre>
+sqrt distance classifier
+absolute distance classifier
+percent distance classifier
+standard deviation distance classifier
+knn (k-nearest neighbors) classifier
+</pre>
