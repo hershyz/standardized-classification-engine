@@ -41,3 +41,12 @@ percent distance classifier
 standard deviation distance classifier
 knn (k-nearest neighbors) classifier
 </pre>
+
+<h4>Train and Cache Model</h4>
+```python
+import training_engine
+import common_model_lib
+
+model = training_engine.get_model('data/drug200.csv')
+common_model_lib.cache(model, 'drug200')
+```
