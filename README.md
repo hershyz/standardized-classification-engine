@@ -43,7 +43,7 @@ knn (k-nearest neighbors) classifier
 </pre>
 
 <h4>Train and Cache Model</h4>
-```python
+```
 import training_engine
 import common_model_lib
 
