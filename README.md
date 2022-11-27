@@ -24,6 +24,15 @@ tensorflow
 keras
 </pre>
 
+<h4>Model Metadata</h4>
+<pre>
+mean per input feature, parameterized by output feature
+int/float mapping (label serialization) for non-numerical input features
+standard deviation per input feature
+sampled raw data, for knn classifications
+max accuracy classification algorithm
+</pre>
+
 <h4>Standardized Classification Algorithms</h4>
 <pre>
 sqrt distance classifier
