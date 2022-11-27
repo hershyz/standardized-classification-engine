@@ -42,7 +42,7 @@ standard deviation distance classifier
 knn (k-nearest neighbors) classifier
 </pre>
 
-<h4>Train and Cache Model</h4>
+<h4>Train and cache model</h4>
 <pre>
 import training_engine
 import common_model_lib
@@ -60,4 +60,29 @@ knn accuracy: 0.94
 ---
 training complete: 0.04366495800059056s elapsed
 max training accuracy: knn (0.94)
+</pre>
+
+<h4>Parse a cached model and predict</h4>
+<pre>
+import common_model_lib
+import prediction_engine
+
+model = common_model_lib.parse_model('drug200.mlmodel')
+point = '23,F,HIGH,HIGH,25.355'.split(',')
+
+'''
+input features:
+point[0] = age
+point[1] = sex
+point[2] = bp
+point[3] = cholesterol
+point[4] = na_to_k (ratio)
+real output: DrugY
+'''
+point = ['23', 'F', 'HIGH', 'HIGH', '25.355']
+print(prediction_engine.predict(point, model))
+</pre>
+<pre>
+(terminal output)
+DrugY
 </pre>
