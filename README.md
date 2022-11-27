@@ -15,7 +15,7 @@
   Finally, this system removes the overhead of large inferencing frameworks, making for faster classifications and model training times without the need for GPU acceleration.
 </p>
 
-<h4>Dependencies for Tests (pip)</h4>
+<h4>Dependencies for tests (pip)</h4>
 <pre>
 numpy
 pandas
@@ -68,7 +68,6 @@ import common_model_lib
 import prediction_engine
 
 model = common_model_lib.parse_model('drug200.mlmodel')
-point = '23,F,HIGH,HIGH,25.355'.split(',')
 
 '''
 input features:
