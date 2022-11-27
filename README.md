@@ -50,3 +50,14 @@ import common_model_lib
 model = training_engine.get_model('data/drug200.csv')
 common_model_lib.cache(model, 'drug200')
 </pre>
+<pre>
+(terminal output)
+sqrt distance classifier accuracy: 0.38
+abs distance classifier accuracy: 0.44
+percent distance classifier accuracy: 0.615
+stddev classifier accuracy: 0.64
+knn accuracy: 0.94
+---
+training complete: 0.04366495800059056s elapsed
+max training accuracy: knn (0.94)
+</pre>
