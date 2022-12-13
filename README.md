@@ -42,6 +42,22 @@ standard deviation distance classifier
 knn (k-nearest neighbors) classifier
 </pre>
 
+<h4>Package Modules</h4>
+<pre>
+abs_distance_classifier
+percent_distance_classifier
+sqrt_distance_classifier
+stddev_classifier
+common_model_lib
+knn
+data_sampler
+dataframe
+model
+numerical_feature_converter
+prediction_engine
+training_engine
+</pre>
+
 <h4>Train and cache model</h4>
 <pre>
 import training_engine
