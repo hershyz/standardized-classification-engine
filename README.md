@@ -4,7 +4,7 @@
 
 <h4>Overview</h4>
 <p>
-  Automated ensemble training engine for geometric ML classification models.
+  Automated ensemble training engine for geometry-based ML classification models.
 </p>
 
 <h4>Purpose</h4>
