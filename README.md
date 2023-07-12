@@ -4,8 +4,7 @@
 
 <h4>Overview</h4>
 <p>
-  Lightweight, standardized classification engine for general machine learning tasks.<br>
-  (GSMST Senior Capstone Maker Project)
+  Automated ensemble training engine for geometric ML classification models.
 </p>
 
 <h4>Purpose</h4>
